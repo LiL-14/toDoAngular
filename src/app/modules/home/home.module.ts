@@ -5,6 +5,7 @@ import { ToDoButtonDeleteAllComponent } from './components/to-do-button-delete-a
 import { ToDoListComponent } from './components/to-do-list/to-do-list.component';
 import { InputAddItensComponent } from './components/input-add-itens/input-add-itens.component';
 import { HomeComponent } from './pages/home/home.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -17,7 +18,8 @@ import { HomeComponent } from './pages/home/home.component';
     HomeComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ]
 })
 export class HomeModule { }
