@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-input-add-itens',
@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./input-add-itens.component.scss']
 })
 export class InputAddItensComponent {
+    @Output() public emmitItemTaskList = new EventEmitter();
 
+    public addItemTaskList: string = "";
+
+    public submitItemTaskList(){          
+      this.addItemTaskList = this.addItemTaskList.trim();
+      if(this.addItemTaskList){
+        this.emmitItemTaskList.emit(this.addItemTaskList);
+        this.addItemTaskList = "";
+      }
+    }
 }
